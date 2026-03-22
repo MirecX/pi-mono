@@ -11,6 +11,11 @@ process.emitWarning = (() => {}) as typeof process.emitWarning;
 import { EnvHttpProxyAgent, setGlobalDispatcher } from "undici";
 import { main } from "./main.js";
 
-setGlobalDispatcher(new EnvHttpProxyAgent());
+setGlobalDispatcher(
+	new EnvHttpProxyAgent({
+		headersTimeout: 30 * 60 * 1000, // 30 min - slow local models need time for thinking
+		bodyTimeout: 30 * 60 * 1000,
+	}),
+);
 
 main(process.argv.slice(2));
