@@ -359,6 +359,7 @@ function createClient(
 		baseURL: model.baseUrl,
 		dangerouslyAllowBrowser: true,
 		defaultHeaders: headers,
+		timeout: 30 * 60 * 1000, // 30 minutes - slow local models need time
 	});
 }
 
