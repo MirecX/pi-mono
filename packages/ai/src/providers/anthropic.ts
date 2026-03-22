@@ -542,7 +542,6 @@ function createClient(
 			authToken: apiKey,
 			baseURL: model.baseUrl,
 			dangerouslyAllowBrowser: true,
-			timeout: 30 * 60 * 1000, // 30 minutes - slow local models need time
 			defaultHeaders: mergeHeaders(
 				{
 					accept: "application/json",
@@ -570,7 +569,6 @@ function createClient(
 			authToken: apiKey,
 			baseURL: model.baseUrl,
 			dangerouslyAllowBrowser: true,
-			timeout: 30 * 60 * 1000,
 			defaultHeaders: mergeHeaders(
 				{
 					accept: "application/json",
